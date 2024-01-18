@@ -31,19 +31,24 @@ function generatePassword(){
 
 
     if (length < 8 || length > 128) {
-        return "Incorrect length selection";
-
+      alert("Please provide a length of at least 8 characters and no more than 128 characters.");
+      return;
       } 
+
+    if (Number.isNaN(length)) {
+      alert("Please provide a valid password length, as a number.")
+      return;
+    }
     // if user input ==> a number is greather than 8 and less than 128
     //ask if wants upperCase -> yes or no
     // check if a number is between two other numbers javascript
       console.log("it's in range");
       var passwordChoices = [];
       var userWantsUpperCase = confirm("Do you want to include upperCase letters?");
-      if(userWantsUpperCase === true) {
+      if (userWantsUpperCase === true) {
         console.log("Add upperCase to passwordChoices");
         passwordChoices = passwordChoices.concat(allUpperCase);
-       
+      }
     // ask if they want to include lowerCase -> yes or no
       var userWantsLowerCase = confirm("Do you want to include lowerCase letters?");
       if (userWantsLowerCase === true) {
@@ -63,21 +68,23 @@ function generatePassword(){
       if (userWantsSpecialChars === true) {
         console.log("Add special characters to passwordChoices");
         passwordChoices = passwordChoices.concat(allSpecialChars);
-        console.log(passwordChoices);
       }
+
+      console.log(passwordChoices);
 
       // function randomSelectPasswordElement will randomly select only 1 element out of our total array of options the user wanted to include. Let's do a for loop to repeat randomSelectPasswordElement for however many i that the length is the user chose.
       function randomSelectPasswordElement() {
         var randomElement = passwordChoices[(Math.floor(Math.random() * passwordChoices.length))];
         console.log(randomElement);
+        return randomElement;
       }
 
       randomSelectPasswordElement();
 
+      var passwordInProgress = [];
       for (var i = 0; i < length; i++) {
         // var passwordInProgress = randomElement
-      }
-}
+      }}
 
 
 /* The below creates a function called "writePassword." This function houses a variable named "password" with a value of generatePassword WHAT IS generatePassword, which is a function call. We are also creating a variable named passwordText which has a value of the textarea element (this is the box which currently has the text "Your Secure Password"). We are also setting the value of the passwordText variable to the function named "password." */
@@ -105,4 +112,4 @@ generateBtn.addEventListener("click", writePassword);
 // console.log('receivedValue: ', receivedValue)
 
 // var firstElement = receivedValue[0];
-// console.log(firstElement.toUpperCase())
+// console.log(firstElement.toUpperCase())}}
