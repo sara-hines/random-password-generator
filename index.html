@@ -17,6 +17,7 @@
           <h2>Generate a Password</h2>
         </div>
         <div class="card-body">
+          <!-- The textarea element is the box which stores the password, once generated, and displays the placeholder text until then. -->
           <textarea
             readonly
             id="password"
@@ -25,6 +26,7 @@
           ></textarea>
         </div>
         <div class="card-footer">
+          <!-- The Generate Password Button is the element the event listener is set on. It will trigger the generatePassword function (which will in turn trigger the createPassword and writePassword functions) when clicked. -->
           <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
