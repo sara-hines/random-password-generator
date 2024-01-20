@@ -38,7 +38,7 @@ function generatePassword() {
 
 
     if (length < 8 || length > 128) {
-      alert("Please provide a length of at least 8 and no more than 128 characters.");
+      alert("Please provide a length of at least 8 and no more than 128 characters. A length of 14 characters or more improves security.");
       return;
     } 
 
@@ -53,14 +53,14 @@ function generatePassword() {
     var guaranteedChars = [];
 
 
-    var userWantsLowerCase = confirm("Do you want to include lowerCase letters? Click 'OK' for yes, or 'Cancel' for no.");
+    var userWantsLowerCase = confirm("Do you want to include lowercase letters? Click 'OK' for yes, or 'Cancel' for no.");
     if (userWantsLowerCase) {
         passwordChoices = passwordChoices.concat(allLowerCase);
         guaranteedChars.push(randomLowerCase);
     }
 
 
-    var userWantsUpperCase = confirm("Do you want to include upperCase letters? Click 'OK' for yes, or 'Cancel' for no.");
+    var userWantsUpperCase = confirm("Do you want to include uppercase letters? Click 'OK' for yes, or 'Cancel' for no.");
     if (userWantsUpperCase) {
         passwordChoices = passwordChoices.concat(allUpperCase);
         guaranteedChars.push(randomUpperCase);
